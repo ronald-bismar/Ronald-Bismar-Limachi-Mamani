@@ -107,7 +107,7 @@ public final class MainActivity extends ComponentActivity {
         complementCheck.setTextColor(MUTED);
         complementCheck.setButtonTintList(checkBoxColors());
         complementCheck.setPadding(0, 0, 0, 0);
-        card.addView(complementCheck, marginParams(-1, dp(34), 0, 0, 0, 0));
+        card.addView(complementCheck, marginParams(-1, dp(20), 0, 0, 0, 0));
         complementCheck.setOnCheckedChangeListener((button, checked) -> {
             complementCheck.setTextColor(checked ? GREEN : MUTED);
             complementInput.setEnabled(checked);
@@ -129,7 +129,7 @@ public final class MainActivity extends ComponentActivity {
         carnetInput.setOnFocusChangeListener(focusListener);
         complementInput.setOnFocusChangeListener(focusListener);
         updateValidationMessages();
-        root.addView(card, frameParams(-1, -1, Gravity.TOP, 0, dp(170), 0, dp(78)));
+        root.addView(card, frameParams(-1, -1, Gravity.TOP, 0, dp(200), 0, dp(78)));
 
         primaryButton = button("Siguiente");
         FrameLayout.LayoutParams buttonParams = frameParams(-1, dp(48), Gravity.BOTTOM, dp(14), 0, dp(14), dp(14));
