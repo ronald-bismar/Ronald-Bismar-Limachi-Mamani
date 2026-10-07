@@ -335,14 +335,24 @@ public final class MainActivity extends ComponentActivity {
         page.setOrientation(LinearLayout.VERTICAL);
         page.setGravity(Gravity.CENTER);
         page.setPadding(dp(24), 0, dp(24), 0);
+
         TextView check = label("✓", 48, Color.WHITE, Typeface.BOLD);
         check.setGravity(Gravity.CENTER);
         check.setBackground(circle(GREEN));
         page.addView(check, new LinearLayout.LayoutParams(dp(94), dp(94)));
+
         TextView title = label("Bienvenido a bille", 25, INK, Typeface.BOLD);
         title.setGravity(Gravity.CENTER);
         page.addView(title, marginParams(-1, -2, 0, 20, 0, 0));
-        page.addView(label("Tu identidad fue verificada correctamente.", 14, MUTED, Typeface.NORMAL));
+
+        TextView subtitle = label("Tu identidad fue verificada correctamente.", 14, MUTED, Typeface.NORMAL);
+        subtitle.setGravity(Gravity.CENTER);
+        LinearLayout.LayoutParams subtitleParams = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        );
+        page.addView(subtitle, subtitleParams);
+
         root.setBackgroundColor(Color.WHITE);
         root.addView(page, frameParams(-1, -1, Gravity.CENTER));
         animateIn(page);
